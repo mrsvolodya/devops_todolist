@@ -1,5 +1,5 @@
-ARG PYTHON_VERSTION=3.10
-FROM python:${PYTHON_VERSTION}
+ARG PYTHON_VERSION=3.10
+FROM python:${PYTHON_VERSION}
 
 WORKDIR /app
 
@@ -9,6 +9,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 RUN python manage.py migrate
 
-ENV PYTHONUNDUFFERED=1
+ENV PYTHONUNBUFFERED=1
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
